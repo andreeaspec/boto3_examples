@@ -21,12 +21,12 @@ def validate_credentials():
         session = boto3.Session(profile_name=profile_name)
         sts = session.client("sts")
         identity = sts.get_caller_identity()
-        print("✅ Credentials are working!")
+        print("Credentials are working!")
         print(identity)
     except NoCredentialsError:
-        print("❌ No credentials found.")
+        print("No credentials found.")
     except ClientError as e:
-        print("❌ AWS client error:", e)
+        print("AWS client error:", e)
 
 
 def create_s3_bucket():
